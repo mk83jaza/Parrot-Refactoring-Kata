@@ -43,9 +43,6 @@ public class Parrot {
 	}
 
 	public String getCry() {
-		return switch (type) {
-			case EUROPEAN -> "Sqoork!";
-			case AFRICAN, NORWEGIAN_BLUE -> throw new IllegalStateException();
-		};
+		throw new IllegalStateException();
 	}
 }
