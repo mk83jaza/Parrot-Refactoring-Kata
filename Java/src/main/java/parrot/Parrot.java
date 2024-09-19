@@ -46,7 +46,7 @@ public class Parrot {
 		return switch (type) {
 			case EUROPEAN -> "Sqoork!";
 			case AFRICAN -> "Sqaark!";
-			case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
+			case NORWEGIAN_BLUE -> throw new IllegalStateException();
 		};
 	}
 }
