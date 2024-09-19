@@ -1,33 +1,16 @@
 package parrot;
 
 public class Parrot {
-
-	private final ParrotTypeEnum type;
-	private final int numberOfCoconuts;
-	private final double voltage;
-	private final boolean isNailed;
-
 	public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
 		return switch (type) {
-			case EUROPEAN -> new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
-			case AFRICAN -> new AfricanParrot(type, numberOfCoconuts, voltage, isNailed);
-			case NORWEGIAN_BLUE -> new NorwegianBlueParrot(type, numberOfCoconuts, voltage, isNailed);
+			case EUROPEAN -> new EuropeanParrot();
+			case AFRICAN -> new AfricanParrot(numberOfCoconuts);
+			case NORWEGIAN_BLUE -> new NorwegianBlueParrot(voltage, isNailed);
 		};
-	}
-
-	public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-		this.type = type;
-		this.numberOfCoconuts = numberOfCoconuts;
-		this.voltage = voltage;
-		this.isNailed = isNailed;
 	}
 
 	public double getSpeed() {
 		throw new IllegalStateException();
-	}
-
-	private double getLoadFactor() {
-		return 9.0;
 	}
 
 	double getBaseSpeed() {
