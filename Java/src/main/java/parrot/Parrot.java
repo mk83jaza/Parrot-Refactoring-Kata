@@ -1,6 +1,6 @@
 package parrot;
 
-public class Parrot {
+public abstract class Parrot {
 	public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
 		return switch (type) {
 			case EUROPEAN -> new EuropeanParrot();
@@ -9,15 +9,11 @@ public class Parrot {
 		};
 	}
 
-	public double getSpeed() {
-		throw new IllegalStateException();
-	}
+	public abstract double getSpeed();
+
+	public abstract String getCry();
 
 	double getBaseSpeed() {
 		return 12.0;
-	}
-
-	public String getCry() {
-		throw new IllegalStateException();
 	}
 }
