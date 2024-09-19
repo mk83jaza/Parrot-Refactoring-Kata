@@ -23,10 +23,7 @@ public class Parrot {
 	}
 
 	public double getSpeed() {
-		return switch (type) {
-			case EUROPEAN, NORWEGIAN_BLUE -> throw new IllegalStateException();
-			case AFRICAN -> Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
-		};
+		throw new IllegalStateException();
 	}
 
 	private double getLoadFactor() {
