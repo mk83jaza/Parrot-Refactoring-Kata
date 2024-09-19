@@ -24,7 +24,7 @@ public class Parrot {
 
 	public double getSpeed() {
 		return switch (type) {
-			case EUROPEAN -> getBaseSpeed();
+			case EUROPEAN -> throw new IllegalStateException();
 			case AFRICAN -> Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
 			case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
 		};
