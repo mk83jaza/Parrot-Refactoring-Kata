@@ -7,6 +7,14 @@ public class Parrot {
 	private final double voltage;
 	private final boolean isNailed;
 
+	public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
+		return switch (type) {
+			case EUROPEAN -> new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+			case AFRICAN -> new AfricanParrot(type, numberOfCoconuts, voltage, isNailed);
+			case NORWEGIAN_BLUE -> new NorwegianBlueParrot(type, numberOfCoconuts, voltage, isNailed);
+		};
+	}
+
 	public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
 		this.type = type;
 		this.numberOfCoconuts = numberOfCoconuts;
